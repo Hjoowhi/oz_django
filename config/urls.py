@@ -5,7 +5,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # 공식 문서에서 추천하는 방식
-    path('feeds/', include('feeds.urls'))
+    path('api/v1/feeds/', include('feeds.urls')),
+    path('api/v1/users/', include('users.urls')),
+    path('api/v1/reviews/', include('reviews.urls'))
 
     # 기본적인 방법
     # url들을 include 시켜주는 경우, 이 path들은 feeds의 urls.py에 간다.

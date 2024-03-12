@@ -30,16 +30,33 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_SYSTEM_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'boards.apps.BoardsConfig',
-    'users.apps.UsersConfig'
 ]
+
+CUSTOM_USER_APPS = [
+    'boards.apps.BoardsConfig',
+    'users.apps.UsersConfig',
+    'feeds.apps.FeedsConfig',
+    'reviews.apps.ReviewsConfig',
+    'rest_framework',
+    'rest_framework.authtoken'
+]
+
+INSTALLED_APPS = DJANGO_SYSTEM_APPS + CUSTOM_USER_APPS
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication', # 추가
+    ],
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

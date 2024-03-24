@@ -15,4 +15,3 @@ urlpatterns = [
     # path('feeds/all', views.all_feed),
     # path('feeds/<int:feed_id>/<str:feed_content>', views.one_feed)
 ]
-

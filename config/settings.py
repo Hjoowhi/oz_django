@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# 기존에 있던 APPS
 DJANGO_SYSTEM_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,7 @@ DJANGO_SYSTEM_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# 내가 설치한 APPS
 CUSTOM_USER_APPS = [
     'boards.apps.BoardsConfig',
     'users.apps.UsersConfig',
@@ -49,6 +51,7 @@ CUSTOM_USER_APPS = [
     'rest_framework_simplejwt',
 ]
 
+# 리스트 + 리스트로 내가 설치한 파일들 통합
 INSTALLED_APPS = DJANGO_SYSTEM_APPS + CUSTOM_USER_APPS
 
 MIDDLEWARE = [
